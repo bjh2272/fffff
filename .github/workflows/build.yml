@@ -10,24 +10,23 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: 코드 체크아웃
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Python 3.12 설치
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: PyInstaller 설치
+      - name: Install PyInstaller
         run: pip install pyinstaller
 
-      - name: EXE 빌드
-        run: |
-          pyinstaller --onefile --noconsole --name "CAD-Renamer-EXE" cad_renamer.py
+      - name: Build EXE
+        run: pyinstaller --onefile --noconsole --name "CAD-Renamer" cad_renamer.py
 
-      - name: EXE 업로드
+      - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
-           name: CAD-Renamer-EXE
-          path: dist/CAD_도면파일명변환기.exe
+          name: CAD-Renamer-EXE
+          path: dist/CAD-Renamer.exe
           retention-days: 90

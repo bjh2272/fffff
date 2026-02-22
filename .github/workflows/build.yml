@@ -29,5 +29,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
            name: CAD-Renamer-EXE
-          path: dist/CAD_cadrenamer.exe
+          path: dist/CAD_도면파일명변환기.exe
           retention-days: 90

@@ -28,6 +28,6 @@ jobs:
       - name: EXE 업로드
         uses: actions/upload-artifact@v4
         with:
-          name: CAD_도면파일명변환기_EXE
-          path: dist/CAD_도면파일명변환기.exe
+           name: CAD-Renamer-EXE
+          path: dist/CAD_cadrenamer.exe
           retention-days: 90
